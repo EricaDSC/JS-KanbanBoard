@@ -37,7 +37,7 @@ const create_item = () => {
       item.innerHTML = input.value;
       adding = false;
     }else {
-      error.innerHTML = mesage;
+      error.innerHTML = message;
     };
   });
 

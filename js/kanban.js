@@ -5,6 +5,7 @@ const error = document.querySelector('.error');
 const message = 'Please add a description.';
 
 const add_btn = document.querySelector('.add');
+
 add_btn.addEventListener('click', () => {
   const target = document.querySelector('#requested');
   if (adding == false) {
@@ -20,6 +21,7 @@ const create_item = () => {
   item.classList.add('item');
   item.id = 'item-' + order;
   item.draggable = true;
+  item.style.background = '#' + (Math.floor(Math.random()*16777215).toString(16));
   item.addEventListener('dragstart', event => event.dataTransfer.setData('text', event.target.id));
   item.addEventListener('dragend', event => event.dataTransfer.clearData());
 
@@ -27,7 +29,7 @@ const create_item = () => {
   item.appendChild(input);
 
   let save_btn = document.createElement('button');
-
+  save_btn.style.background = '#' + (Math.floor(Math.random()*16777215).toString(16));
   save_btn.innerHTML = 'Save';
   save_btn.addEventListener('click', () => {
     error.innerHTML = '';
